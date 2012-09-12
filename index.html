@@ -25,7 +25,21 @@
                 height: 100%;
             }
         </style>
+
+        <!--Google Analytics-->
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-34759613-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
     </head>
+    
     <body>
         <div id="map"></div>
     </body>
@@ -77,19 +91,19 @@
 
         legend.addTo(map);
 
-        /*various other optional location stuff from leaflet mobile example
+        /*//various other optional location stuff from leaflet mobile example
         function onLocationFound(e) {
             var radius = e.accuracy / 2;
             L.marker(e.latlng).addTo(map)
                 .bindPopup("You are within " + radius + " meters from this point").openPopup();
             L.circle(e.latlng, radius).addTo(map);
-            }*/
+            }
 
         function onLocationError(e) {
             alert(e.message);
             }
         //map.on('locationfound', onLocationFound);
-        map.on('locationerror', onLocationError);
+        map.on('locationerror', onLocationError);*/
         map.locate({setView: true, maxZoom: 16});
     
     </script>
