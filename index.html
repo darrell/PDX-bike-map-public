@@ -54,32 +54,33 @@
         });
 
         var light = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-27efvqf1/{z}/{x}/{y}.png", {
-                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
+                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. - <i><b><a href="http://pdxmele.github.com/PDX-bike-map/legend.png" target="_blank">VIEW MAP LEGEND</a></b>'
         });
         map.addLayer(light);
 
         var lightRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-jliolnen/{z}/{x}/{y}.png", {
-                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
+                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. - <i><b><a href="http://pdxmele.github.com/PDX-bike-map/legend.png" target="_blank">VIEW MAP LEGEND</a></b>'
         });
 
         var neon = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-xdgh3mb4/{z}/{x}/{y}.png", {
-                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
+                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. - <i><b><a href="http://pdxmele.github.com/PDX-bike-map/legend.png" target="_blank">VIEW MAP LEGEND</a></b>'
         });
 
         var neonRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-adxmvqk8/{z}/{x}/{y}.png", {
-                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
+                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. - <i><b><a href="http://pdxmele.github.com/PDX-bike-map/legend.png" target="_blank">VIEW MAP LEGEND</a></b>'
         });
 
         var terrain = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-8b6kmkd3/{z}/{x}/{y}.png", {
-                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
+                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. - <i><b><a href="http://pdxmele.github.com/PDX-bike-map/legend.png" target="_blank">VIEW MAP LEGEND</a></b>'
         });
 
         var terrainRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-zq91uw8d/{z}/{x}/{y}.png", {
-                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
+                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. - <i><b><a href="http://pdxmele.github.com/PDX-bike-map/legend.png" target="_blank">VIEW MAP LEGEND</a></b>'
         });
 
-        map.addControl(new L.Control.Layers({"Light":light, 'Light retina':lightRetina, "Neon":neon, 'Neon retina':neonRetina, "Terrain":terrain, 'Terrain retina':terrainRetina}, {}));
+        map.addControl(new L.Control.Layers({"Light":light, 'Light big':lightRetina, "Neon":neon, 'Neon big':neonRetina, "Terrain":terrain, 'Terrain big':terrainRetina}, {}));
         
+        /* removed for now in lieu of link -- takes up too much space on mobile devices
         //hacked together legend from choropleth example, just using a screenshot of my auto-generated TileMill/MapBox legend
         var legend = L.control({position: 'bottomright'});
             legend.onAdd = function (map) {
@@ -89,7 +90,7 @@
                 return div;
             };
 
-        legend.addTo(map);
+        legend.addTo(map);*/
 
         /*//various other optional location stuff from leaflet mobile example
         function onLocationFound(e) {
