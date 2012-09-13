@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
         <!--css style links-->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.css" />
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css" />
         <!--[if lte IE 8]>
             <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.ie.css" />
@@ -15,15 +16,26 @@
 
         <!--js library links-->
         <script src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js"></script>
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.js"></script>
        
         <style>
+            #legendButton {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                margin-right: 10px;
+                margin-bottom: 30px;
+            }
+
+            /*
             body {
                 padding: 0;
                 margin: 0;
             }
             html, body, #map {
                 height: 100%;
-            }
+            }*/
         </style>
 
         <!--Google Analytics-->
@@ -42,70 +54,72 @@
     
     <body>
         <div id="map"></div>
+        <div id="legendButton">
+            <button type="button" onclick="$('#myPopup').popup('open', {positionTo: 'window'});">Legend</button> 
+        </div>
+        <div data-role="popup" id="myPopup" class="ui-content" data-overlay-theme="b" data-theme="c">
+            <img src="http://pdxmele.github.com/PDX-bike-map/legend.png">
+                <a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+        </div>
     </body>
  
     <!--my script-->
     <script type ="text/javascript">
 
-        var map = new L.Map('map', {
-            center: new L.LatLng(45.516, -122.680),
-            zoom: 15,
-            maxZoom: 17
+        $(document).ready(function() {
+
+            $.ajaxSetup({cache:false});
+            $('#map').css('height', ($(window).height()));
+
+            var map = new L.Map('map', {
+                center: new L.LatLng(45.516, -122.680),
+                zoom: 15,
+                maxZoom: 17
+            });
+
+            var light = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-27efvqf1/{z}/{x}/{y}.png", {
+                    attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>'
+            });
+            map.addLayer(light);
+
+            var lightRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-jliolnen/{z}/{x}/{y}.png", {
+                    attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>'
+            });
+
+            var neon = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-xdgh3mb4/{z}/{x}/{y}.png", {
+                    attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>'
+            });
+
+            var neonRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-adxmvqk8/{z}/{x}/{y}.png", {
+                    attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>'
+            });
+
+            var terrain = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-8b6kmkd3/{z}/{x}/{y}.png", {
+                    attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>'
+            });
+
+            var terrainRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-zq91uw8d/{z}/{x}/{y}.png", {
+                    attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>'
+            });
+
+            map.addControl(new L.Control.Layers({"Light":light, 'Light big':lightRetina, "Neon":neon, 'Neon big':neonRetina, "Terrain":terrain, 'Terrain big':terrainRetina}, {}));
+
+            /*//various other optional location stuff from leaflet mobile example
+            function onLocationFound(e) {
+                var radius = e.accuracy / 2;
+                L.marker(e.latlng).addTo(map)
+                    .bindPopup("You are within " + radius + " meters from this point").openPopup();
+                L.circle(e.latlng, radius).addTo(map);
+                }
+
+            function onLocationError(e) {
+                alert(e.message);
+                }
+            //map.on('locationfound', onLocationFound);
+            map.on('locationerror', onLocationError);*/
+            map.locate({setView: true, maxZoom: 16});
+
         });
-
-        var light = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-27efvqf1/{z}/{x}/{y}.png", {
-                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. - <i><b><a href="http://pdxmele.github.com/PDX-bike-map/legend.png" target="_blank">VIEW MAP LEGEND</a></b>'
-        });
-        map.addLayer(light);
-
-        var lightRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-jliolnen/{z}/{x}/{y}.png", {
-                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. - <i><b><a href="http://pdxmele.github.com/PDX-bike-map/legend.png" target="_blank">VIEW MAP LEGEND</a></b>'
-        });
-
-        var neon = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-xdgh3mb4/{z}/{x}/{y}.png", {
-                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. - <i><b><a href="http://pdxmele.github.com/PDX-bike-map/legend.png" target="_blank">VIEW MAP LEGEND</a></b>'
-        });
-
-        var neonRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-adxmvqk8/{z}/{x}/{y}.png", {
-                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. - <i><b><a href="http://pdxmele.github.com/PDX-bike-map/legend.png" target="_blank">VIEW MAP LEGEND</a></b>'
-        });
-
-        var terrain = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-8b6kmkd3/{z}/{x}/{y}.png", {
-                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. - <i><b><a href="http://pdxmele.github.com/PDX-bike-map/legend.png" target="_blank">VIEW MAP LEGEND</a></b>'
-        });
-
-        var terrainRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-zq91uw8d/{z}/{x}/{y}.png", {
-                attribution: 'Tiles by <a href="http://pdxmele.github.com/pdxmele" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. - <i><b><a href="http://pdxmele.github.com/PDX-bike-map/legend.png" target="_blank">VIEW MAP LEGEND</a></b>'
-        });
-
-        map.addControl(new L.Control.Layers({"Light":light, 'Light big':lightRetina, "Neon":neon, 'Neon big':neonRetina, "Terrain":terrain, 'Terrain big':terrainRetina}, {}));
-        
-        /* removed for now in lieu of link -- takes up too much space on mobile devices
-        //hacked together legend from choropleth example, just using a screenshot of my auto-generated TileMill/MapBox legend
-        var legend = L.control({position: 'bottomright'});
-            legend.onAdd = function (map) {
-
-                var div = L.DomUtil.create('div', 'info legend');;
-                    div.innerHTML = '<img src="legend.png">'
-                return div;
-            };
-
-        legend.addTo(map);*/
-
-        /*//various other optional location stuff from leaflet mobile example
-        function onLocationFound(e) {
-            var radius = e.accuracy / 2;
-            L.marker(e.latlng).addTo(map)
-                .bindPopup("You are within " + radius + " meters from this point").openPopup();
-            L.circle(e.latlng, radius).addTo(map);
-            }
-
-        function onLocationError(e) {
-            alert(e.message);
-            }
-        //map.on('locationfound', onLocationFound);
-        map.on('locationerror', onLocationError);*/
-        map.locate({setView: true, maxZoom: 16});
     
     </script>
 
