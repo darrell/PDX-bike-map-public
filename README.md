@@ -10,7 +10,7 @@ If you're interested in reproducing this for your city, here are the basics of h
 3. Get some OpenStreetMap data (an .osm file). If you're a contributor and use JOSM http://josm.openstreetmap.de/, you can use the "Mirrored download" plugin to get a large area very quickly.
 4. Use osm2pgsql to stick it in a PostGIS database. Info at this site: http://wiki.openstreetmap.org/wiki/Osm2pgsql . Make sure you edit your style file to reflect the attributes you're looking for. I can make mine available to you as an example if you're interested.
 5. Put it in a new TileMill project, and style it up http://mapbox.com/tilemill/docs/crashcourse/introduction/ . You can even have it semi-auto-generate a legend for you.
-6. When you're done styling, upload it to your MapBox account. Don't forget to set sensible zoom levels and bounds.
+6. When you're done styling, upload it to your MapBox account. Don't forget to set sensible zoom levels and bounds. My mss file is in the supporting_files folder for reference.
 7. Have fun creating composite maps with your tiles. Create several and have fun customizing your base maps. http://mapbox.com/tour/design/
 8. Among other changes you'll need to make to my index.html , change the map links to your account_name.map_names in the Leaflet layers.
 9. Replace the legend image with a screenshot of your own, however you go about making it.
