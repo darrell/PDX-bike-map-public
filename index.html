@@ -67,8 +67,12 @@
 
         $(document).ready(function() {
 
+            var resizeMap = function () {
+                $('#map').css('height', ($(window).height()));
+            };
+
             $.ajaxSetup({cache:false});
-            $('#map').css('height', ($(window).height()));
+            resizeMap();
 
             var map = new L.Map('map', {
                 center: new L.LatLng(45.516, -122.680),
@@ -117,6 +121,8 @@
             //map.on('locationfound', onLocationFound);
             map.on('locationerror', onLocationError);*/
             map.locate({setView: true, maxZoom: 16});
+
+            $(window).on('resize', resizeMap);
 
         });
     
