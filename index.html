@@ -97,7 +97,15 @@
                     attribution: 'Tiles by <a href="http://www.pdxmele.com" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>'
             });
 
-            map.addControl(new L.Control.Layers({"Neon":neon, 'Neon big':neonRetina, "Light":light, 'Light big':lightRetina, "Terrain":terrain, 'Terrain big':terrainRetina}, {}));
+            var sat = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-tt774zh7/{z}/{x}/{y}.png", {
+                    attribution: 'Tiles by <a href="http://www.pdxmele.com" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>'
+            });
+
+            var satRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-a7jwfojm/{z}/{x}/{y}.png", {
+                    attribution: 'Tiles by <a href="http://www.pdxmele.com" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>'
+            });
+
+            map.addControl(new L.Control.Layers({"Neon":neon, 'Neon big':neonRetina, "Light":light, 'Light big':lightRetina, "Terrain":terrain, 'Terrain big':terrainRetina, "Satellite":sat, 'Satellite big':satRetina}, {}));
 
             map.locate({setView: true, maxZoom: 16});
 
