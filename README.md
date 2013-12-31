@@ -18,3 +18,4 @@ If you're interested in reproducing this for your city, here are the basics of h
 
 See... open source and open data web mapping is easy! Now if the OpenStreetMap bike data in your city isn't great, THAT might take a little bit of work. :)
 
+If you like this, please consider donating on Gittip: https://www.gittip.com/pdxmele/
