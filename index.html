@@ -11,7 +11,8 @@
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.css" />
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
 
-        <!--js library links-->
+        <!--js links-->
+        <script src="./publicToken.js"></script>
         <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
         <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.js"></script>
@@ -68,37 +69,37 @@
                 maxZoom: 17
             });
 
-            var neon = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-xdgh3mb4/{z}/{x}/{y}.png", {
+            var neon = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-xdgh3mb4/{z}/{x}/{y}.png?access_token=?" + publicToken, {
                     attribution: 'Tiles by <a href="http://www.pdxmele.com" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>'
             });
             map.addLayer(neon);
 
-            var neonRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-adxmvqk8/{z}/{x}/{y}.png", {
+            var neonRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-adxmvqk8/{z}/{x}/{y}.png?access_token=?" + publicToken, {
                     attribution: 'Tiles by <a href="http://www.pdxmele.com" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>'
             });
 
 
-            var light = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-27efvqf1/{z}/{x}/{y}.png", {
+            var light = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-27efvqf1/{z}/{x}/{y}.png?access_token=?" + publicToken, {
                     attribution: 'Tiles by <a href="http://www.pdxmele.com" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>'
             });
 
-            var lightRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-jliolnen/{z}/{x}/{y}.png", {
+            var lightRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-jliolnen/{z}/{x}/{y}.png?access_token=?" + publicToken, {
                     attribution: 'Tiles by <a href="http://www.pdxmele.com" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>'
             });
 
-            var terrain = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-8b6kmkd3/{z}/{x}/{y}.png", {
+            var terrain = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-8b6kmkd3/{z}/{x}/{y}.png?access_token=?" + publicToken, {
                     attribution: 'Tiles by <a href="http://www.pdxmele.com" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>'
             });
 
-            var terrainRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-zq91uw8d/{z}/{x}/{y}.png", {
+            var terrainRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-zq91uw8d/{z}/{x}/{y}.png?access_token=?" + publicToken, {
                     attribution: 'Tiles by <a href="http://www.pdxmele.com" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>'
             });
 
-            var sat = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-tt774zh7/{z}/{x}/{y}.png", {
+            var sat = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-tt774zh7/{z}/{x}/{y}.png?access_token=?" + publicToken, {
                     attribution: 'Tiles by <a href="http://www.pdxmele.com" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>'
             });
 
-            var satRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-a7jwfojm/{z}/{x}/{y}.png", {
+            var satRetina = new L.TileLayer("http://a.tiles.mapbox.com/v3/saxbarm.map-a7jwfojm/{z}/{x}/{y}.png?access_token=?" + publicToken, {
                     attribution: 'Tiles by <a href="http://www.pdxmele.com" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>'
             });
 
