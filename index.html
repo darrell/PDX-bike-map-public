@@ -9,11 +9,11 @@
 
         <!--css style links-->
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.css" />
-        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 
         <!--js links-->
         <script src="./publicToken.js"></script>
-        <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
         <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.js"></script>
        
@@ -66,21 +66,21 @@
             var map = new L.Map('map', {
                 center: new L.LatLng(45.516, -122.680),
                 zoom: 15,
-                maxZoom: 17
+                maxZoom: 18
             });
 
             var attributionString = 'Tiles by <a href="http://www.pdxmele.com" target="_blank">Mele Sax-Barnett</a>, <a href="http://www.mapbox.com" target="_blank">MapBox</a>. Map data <a href="http://www.openstreetmap.org/copyright" target="_blank">(c) OpenStreetMap contributors</a>. <a href="https://github.com/pdxmele/PDX-bike-map-public" target="_blank">About this map</a>';
 
+            var terrain = new L.TileLayer("http://api.tiles.mapbox.com/v4/saxbarm.lbidcooi/{z}/{x}/{y}.png?access_token=" + publicToken, {
+                    attribution: attributionString
+            });
+            map.addLayer(terrain);
+
             var neon = new L.TileLayer("http://api.tiles.mapbox.com/v4/saxbarm.lbifo4f5/{z}/{x}/{y}.png?access_token=" + publicToken, {
                     attribution: attributionString
             });
-            map.addLayer(neon);
 
             var light = new L.TileLayer("http://api.tiles.mapbox.com/v4/saxbarm.lbid2b01/{z}/{x}/{y}.png?access_token=" + publicToken, {
-                    attribution: attributionString
-            });
-
-            var terrain = new L.TileLayer("http://api.tiles.mapbox.com/v4/saxbarm.lbidcooi/{z}/{x}/{y}.png?access_token=" + publicToken, {
                     attribution: attributionString
             });
 
@@ -88,7 +88,7 @@
                     attribution: attributionString
             });
 
-            map.addControl(new L.Control.Layers({"Neon":neon, "Light":light, "Terrain":terrain, "Satellite":sat}, {}));
+            map.addControl(new L.Control.Layers({"Terrain":terrain, "Neon":neon, "Light":light, "Satellite":sat}, {}));
 
             map.locate({setView: true, maxZoom: 16});
 
