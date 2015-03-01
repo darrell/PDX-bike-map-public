@@ -1,5 +1,5 @@
-PDX-bike-map
-============
+PDX-bike-map (public fork)
+==========================
 
 Super simple bike map viewer for the Portland, Oregon area, which I created mostly so I can easily view my MapBox bike route tiles when I'm out and about in an unfamiliar area. It uses OpenStreetMap data, with map tiles styled by me + MapBox. Leaflet + jQuery-powered.
 
@@ -18,4 +18,4 @@ If you're interested in reproducing this for your city, here are the basics of h
 
 See... open source and open data web mapping is easy! Now if the OpenStreetMap bike data in your city isn't great, THAT might take a little bit of work. :)
 
-If you like this, please consider donating on Gittip: https://www.gittip.com/pdxmele/
+If you like this, please consider donating on Gratipay: https://gratipay.com/pdxmele/
