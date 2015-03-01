@@ -14,6 +14,7 @@
         <!--js links-->
         <script src="./publicToken.js"></script>
         <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+        <script src="Leaflet.MakiMarkers/Leaflet.MakiMarkers.js"></script>
         <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.js"></script>
        
@@ -90,6 +91,19 @@
 
             map.addControl(new L.Control.Layers({"Terrain":terrain, "Neon":neon, "Light":light, "Satellite":sat}, {}));
 
+            function onLocationFound(e) {
+                //var radius = e.accuracy / 2;
+                var locIcon = L.MakiMarkers.icon({icon: "bicycle", color: "#01DF23", size: "m"});
+                L.marker(e.latlng, {icon: locIcon}).addTo(map).bindPopup("You are here").openPopup();
+                //L.marker(e.latlng).addTo(map)
+            }
+
+            function onLocationError(e) {
+                console.log("Unable to obtain location, error: " + e.message);
+            }
+
+            map.on('locationfound', onLocationFound);
+            map.on('locationerror', onLocationError);
             map.locate({setView: true, maxZoom: 16});
 
             $(window).on('resize', resizeMap);
