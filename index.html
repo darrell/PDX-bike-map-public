@@ -76,36 +76,19 @@
             });
             map.addLayer(neon);
 
-            var neonRetina = new L.TileLayer("http://api.tiles.mapbox.com/v4/saxbarm.map-adxmvqk8/{z}/{x}/{y}.png?access_token=" + publicToken, {
+            var light = new L.TileLayer("http://api.tiles.mapbox.com/v4/saxbarm.lbid2b01/{z}/{x}/{y}.png?access_token=" + publicToken, {
                     attribution: attributionString
             });
 
-
-            var light = new L.TileLayer("http://api.tiles.mapbox.com/v4/saxbarm.map-27efvqf1/{z}/{x}/{y}.png?access_token=" + publicToken, {
+            var terrain = new L.TileLayer("http://api.tiles.mapbox.com/v4/saxbarm.lbidcooi/{z}/{x}/{y}.png?access_token=" + publicToken, {
                     attribution: attributionString
             });
 
-            var lightRetina = new L.TileLayer("http://api.tiles.mapbox.com/v4/saxbarm.map-jliolnen/{z}/{x}/{y}.png?access_token=" + publicToken, {
+            var sat = new L.TileLayer("http://api.tiles.mapbox.com/v4/saxbarm.lbie2615/{z}/{x}/{y}.png?access_token=" + publicToken, {
                     attribution: attributionString
             });
 
-            var terrain = new L.TileLayer("http://api.tiles.mapbox.com/v4/saxbarm.map-8b6kmkd3/{z}/{x}/{y}.png?access_token=" + publicToken, {
-                    attribution: attributionString
-            });
-
-            var terrainRetina = new L.TileLayer("http://api.tiles.mapbox.com/v4/saxbarm.map-zq91uw8d/{z}/{x}/{y}.png?access_token=" + publicToken, {
-                    attribution: attributionString
-            });
-
-            var sat = new L.TileLayer("http://api.tiles.mapbox.com/v4/saxbarm.map-tt774zh7/{z}/{x}/{y}.png?access_token=" + publicToken, {
-                    attribution: attributionString
-            });
-
-            var satRetina = new L.TileLayer("http://api.tiles.mapbox.com/v4/saxbarm.map-a7jwfojm/{z}/{x}/{y}.png?access_token=" + publicToken, {
-                    attribution: attributionString
-            });
-
-            map.addControl(new L.Control.Layers({"Neon":neon, 'Neon big':neonRetina, "Light":light, 'Light big':lightRetina, "Terrain":terrain, 'Terrain big':terrainRetina, "Satellite":sat, 'Satellite big':satRetina}, {}));
+            map.addControl(new L.Control.Layers({"Neon":neon, "Light":light, "Terrain":terrain, "Satellite":sat}, {}));
 
             map.locate({setView: true, maxZoom: 16});
 
