@@ -7,7 +7,7 @@ Map {} /* transparent background */
   line-color:#00ffcc;
   line-width:10;
   opacity: .6;
-  line-join:round;
+  line-cap: round;
   [zoom = 16]{line-width:6;}
   [zoom = 15]{line-width:4;}
   [zoom = 14]{line-width:3;}
@@ -20,7 +20,7 @@ Map {} /* transparent background */
   line-color:#2500ff;
   line-width:10;
   opacity: .6;
-  line-join:round;
+  line-cap: round;
   [zoom = 16]{line-width:6;}
   [zoom = 15]{line-width:4;}
   [zoom = 14]{line-width:3;}
@@ -33,7 +33,7 @@ Map {} /* transparent background */
   line-color:#01df23;
   line-width:10;
   opacity: .6;
-  line-join:round;
+  line-cap: round;
   [zoom = 16]{line-width:6;}
   [zoom = 15]{line-width:4;}
   [zoom = 14]{line-width:3;}
@@ -46,7 +46,7 @@ Map {} /* transparent background */
   line-color:#ff6cf0;
   line-width:10;
   opacity: .6;
-  line-join:round;
+  line-cap: round;
   [zoom = 16]{line-width:6;}
   [zoom = 15]{line-width:4;}
   [zoom = 14]{line-width:3;}
@@ -59,7 +59,7 @@ Map {} /* transparent background */
   line-color:#f99326;
   line-width:10;
   opacity: .6;
-  line-join:round;
+  line-cap: round;
   [zoom = 16]{line-width:6;}
   [zoom = 15]{line-width:4;}
   [zoom = 14]{line-width:3;}
@@ -72,7 +72,7 @@ Map {} /* transparent background */
   line-color:#fa5324;
   line-width:10;
   opacity: .6;
-  line-join:round;
+  line-cap: round;
   [zoom = 16]{line-width:6;}
   [zoom = 15]{line-width:4;}
   [zoom = 14]{line-width:3;}
@@ -85,7 +85,7 @@ Map {} /* transparent background */
   line-color:#fa5324;
   line-width:10;
   opacity: .6;
-  line-join:round;
+  line-cap: round;
   [zoom = 16]{line-width:6;}
   [zoom = 15]{line-width:4;}
   [zoom = 14]{line-width:3;}
@@ -100,6 +100,7 @@ Map {} /* transparent background */
   line-color:#d7008c;
   line-width:10;
   line-dasharray: 2,2,2;
+  line-cap: butt;
   opacity: .6;
   [zoom > 15]{
     line-dasharray: 4,4,4;
@@ -116,6 +117,7 @@ Map {} /* transparent background */
   line-color:#d7008c;
   line-width:10;
   line-dasharray: 2,2,2;
+  line-cap: butt;
   opacity: .6;
   [zoom > 15]{
     line-dasharray: 4,4,4;
@@ -132,6 +134,7 @@ Map {} /* transparent background */
   line-color:#d7008c;
   line-width:10;
   line-dasharray: 2,2,2;
+  line-cap: butt;
   opacity: .6;
   [zoom > 15]{
     line-dasharray: 4,4,4;
@@ -146,6 +149,7 @@ Map {} /* transparent background */
   line-color:#d7008c;
   line-width:10;
   line-dasharray: 2,2,2;
+  line-cap: butt;
   opacity: .6;
   [zoom > 15]{
     line-dasharray: 4,4,4;
