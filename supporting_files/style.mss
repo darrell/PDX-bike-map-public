@@ -8,6 +8,7 @@ Map {} /* transparent background */
   line-width:10;
   opacity: .6;
   line-cap: round;
+  [zoom = 17]{line-width:8;}
   [zoom = 16]{line-width:6;}
   [zoom = 15]{line-width:4;}
   [zoom = 14]{line-width:3;}
@@ -21,6 +22,7 @@ Map {} /* transparent background */
   line-width:10;
   opacity: .6;
   line-cap: round;
+  [zoom = 17]{line-width:8;}
   [zoom = 16]{line-width:6;}
   [zoom = 15]{line-width:4;}
   [zoom = 14]{line-width:3;}
@@ -34,6 +36,7 @@ Map {} /* transparent background */
   line-width:10;
   opacity: .6;
   line-cap: round;
+  [zoom = 17]{line-width:8;}
   [zoom = 16]{line-width:6;}
   [zoom = 15]{line-width:4;}
   [zoom = 14]{line-width:3;}
@@ -47,6 +50,7 @@ Map {} /* transparent background */
   line-width:10;
   opacity: .6;
   line-cap: round;
+  [zoom = 17]{line-width:8;}
   [zoom = 16]{line-width:6;}
   [zoom = 15]{line-width:4;}
   [zoom = 14]{line-width:3;}
@@ -60,6 +64,7 @@ Map {} /* transparent background */
   line-width:10;
   opacity: .6;
   line-cap: round;
+  [zoom = 17]{line-width:8;}
   [zoom = 16]{line-width:6;}
   [zoom = 15]{line-width:4;}
   [zoom = 14]{line-width:3;}
@@ -73,6 +78,7 @@ Map {} /* transparent background */
   line-width:10;
   opacity: .6;
   line-cap: round;
+  [zoom = 17]{line-width:8;}
   [zoom = 16]{line-width:6;}
   [zoom = 15]{line-width:4;}
   [zoom = 14]{line-width:3;}
@@ -86,6 +92,7 @@ Map {} /* transparent background */
   line-width:10;
   opacity: .6;
   line-cap: round;
+  [zoom = 17]{line-width:8;}
   [zoom = 16]{line-width:6;}
   [zoom = 15]{line-width:4;}
   [zoom = 14]{line-width:3;}
