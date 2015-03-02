@@ -1,5 +1,6 @@
 /*
  * Leaflet plugin to create map icons using Maki Icons from MapBox.
+ * https://github.com/jseppi/Leaflet.MakiMarkers
  *
  * References:
  *   Maki Icons: https://www.mapbox.com/maki/
